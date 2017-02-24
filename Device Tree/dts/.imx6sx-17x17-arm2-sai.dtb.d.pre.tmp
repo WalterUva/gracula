@@ -1,0 +1,7 @@
+imx6sx-17x17-arm2-sai.o: arch/arm/boot/dts/imx6sx-17x17-arm2-sai.dts \
+ arch/arm/boot/dts/imx6sx-17x17-arm2.dts arch/arm/boot/dts/imx6sx.dtsi \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/clock/imx6sx-clock.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h \
+ arch/arm/boot/dts/imx6sx-pinfunc.h arch/arm/boot/dts/skeleton.dtsi

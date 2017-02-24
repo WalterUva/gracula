@@ -1,0 +1,8 @@
+imx7d-19x19-ddr3-arm2.o: arch/arm/boot/dts/imx7d-19x19-ddr3-arm2.dts \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/input/input.h \
+ arch/arm/boot/dts/imx7d.dtsi \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/clock/imx7d-clock.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h \
+ arch/arm/boot/dts/imx7d-pinfunc.h arch/arm/boot/dts/skeleton.dtsi

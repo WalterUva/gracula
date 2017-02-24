@@ -1,0 +1,51 @@
+* Freescale Inter IC (I2C) and High Speed Inter IC (HS-I2C) for i.MX
+
+Required properties:
+- compatible :
+  - "fsl,imx1-i2c" for I2C compatible with the one integrated on i.MX1 SoC
+  - "fsl,imx21-i2c" for I2C compatible with the one integrated on i.MX21 SoC
+  - "fsl,vf610-i2c" for I2C compatible with the one integrated on Vybrid vf610 SoC
+- reg : Should contain I2C/HS-I2C registers location and length
+- interrupts : Should contain I2C/HS-I2C interrupt
+
+Optional properties:
+- clock-frequency : Constains desired I2C/HS-I2C bus clock frequency in Hz.
+  The absence of the propoerty indicates the default frequency 100 kHz.
+
+Examples:
+
+i2c@83fc4000 { /* I2C2 on i.MX51 */
+	compatible = "fsl,imx51-i2c", "fsl,imx21-i2c";
+	reg = <0x83fc4000 0x4000>;
+	interrupts = <63>;
+};
+
+i2c@70038000 { /* HS-I2C on i.MX51 */
+	compatible = "fsl,imx51-i2c", "fsl,imx21-i2c";
+	reg = <0x70038000 0x4000>;
+	interrupts = <64>;
+	clock-frequency = <400000>;
+};
+
+The driver can provide recovery functionality for cases were the bus gets
+stuck with SDA pulled low.
+In order to enable this one has to specify an additional pinctrl property with
+the name 'recovery' to mux GPIO functionality on SDA/SCL and a gpios
+property with the GPIOs for SDA/SCL.
+The lack of the gpios property disables the functionality.
+
+Examples:
+&i2c3 {
+        clock-frequency = <100000>;
+        pinctrl-names = "default", "recovery";
+        pinctrl-0 = <&pinctrl_i2c3_1>;
+        pinctrl-1 = <&pinctrl_i2c3_recovery_1>;
+        gpios = <&gpio3 18 0 /* sda */
+                 &gpio3 17 0 /* scl */
+                >;
+        status = "disabled";
+};
+
+When e.g. a device driver detects a stuck bus
+int i2c_recover_bus(struct i2c_adapter *adap)
+can be called to try to recover the bus.

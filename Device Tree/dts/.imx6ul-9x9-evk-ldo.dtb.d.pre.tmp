@@ -1,0 +1,9 @@
+imx6ul-9x9-evk-ldo.o: arch/arm/boot/dts/imx6ul-9x9-evk-ldo.dts \
+ arch/arm/boot/dts/imx6ul-9x9-evk.dts \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/input/input.h \
+ arch/arm/boot/dts/imx6ul.dtsi \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/clock/imx6ul-clock.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h \
+ /home/walter/linux-toradex/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h \
+ arch/arm/boot/dts/imx6ul-pinfunc.h arch/arm/boot/dts/skeleton.dtsi
