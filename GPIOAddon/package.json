@@ -1,0 +1,15 @@
+{
+  "name": "gpio",
+  "version": "1.0.0",
+  "description": "GPIO addon",
+  "main": "index.js",
+  "gypfile":true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.5.1"
+  }
+}
